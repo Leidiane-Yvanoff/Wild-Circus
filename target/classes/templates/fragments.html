@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Wild Circus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger" th:fragment="nav">
+    <h1><a class="navbar-brand" href="/">Wild circus</a> </h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#performances">Performances</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Spectacles</a>
+            </li>
+        </ul>
+        <form action="/search" class="form-inline my-2 my-lg-0">
+            <input id="name" name="name" class="form-control mr-sm-2 mb-4" type="text" placeholder="Rechercher">
+            <button class="btn btn-danger mb-4" type="submit">Go</button>
+        </form>
+    </div>
+</nav>
+<footer class="footer bg-danger" th:fragment="footer">
+    <div class="container"><a href="https://wildcodeschool.fr" target="_blank">Wild Circus</a>
+        <a href="https://lydesign.fr" target="_blank">by Leidiane YVANOFF</a>
+        <a href="http://www.france-ioi.org/user/perso.php?sLogin=lydesign37" target="_blank">France-IOI</a> -
+        <a href="https://odyssey.wildcodeschool.com/users/6802" target="_blank">SoloLearn</a>
+    </div>
+
+    <script th:src="@{/js/jquery-3.2.1.slim.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton|Montserrat:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+body {
+  font-family: 'Amatic SC', cursive;
+
+  text-align :center;
+
+}
+div#navbarColor01 {
+    margin-left: 15vw;
+}
+a.nav-link {
+ font-size: 20px;
+}
+h1, h2, h3, p {
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+a.navbar-brand{
+  font-family: 'Monoton', cursive;
+  letter-spacing: 5px;
+  font-size: 50px;
+   color: red;
+
+
+}
+
+h2 {
+ font-family: 'Amatic SC', cursive;
+  color: red;
+  padding-top: 80px;
+  text-align:center;
+  border-bottom-style:  double ;
+  padding-bottom: 10px;
+}
+h3 {
+  font-family: 'Amatic SC', cursive;
+  padding-top: 40px;
+}
+h4{
+  font-family: 'Amatic SC', cursive;
+  padding-top: 40px;
+}
+.hero {
+  display:flex;
+  background-image: url('/img/bg-cirque.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: auto;
+  width: 100%;
+}
+
+h2.slogan {
+    padding-top: 25%;
+    border-bottom-style: none;
+    text-align:center;
+    padding-left: 27%;
+    font-size: 4vw;
+
+}
+
+.navbar-nav ul {
+
+  list-style: none;
+  text-transform: uppercase;
+  padding-top: 260px;
+  color: red;
+  text-align: center;
+
+
+
+}
+.navbar-nav li {
+  padding-top: 5px;
+  color: red;
+
+
+}
+.navbar-nav a{
+  text-decoration-color: black;
+  color: red;
+
+
+}
+.navbar-nav a:hover{
+  text-decoration-color: black;
+  text-decoration-style: double;
+  color: white;
+
+}
+.performances {
+  display: flex;
+  list-style: none;
+
+}
+.performances li{
+  margin: 20px;
+  padding: 0px 40px 0 20px;
+}
+
+.image {
+  width: auto;
+  height: 400px;
+  float: left;
+  display: block;
+  padding-top: 40px;
+
+}
+i {
+  color: red;
+}
+
+.text  {
+  text-align: justify;
+
+  width: 500px;
+
+
+}
+.image-text {
+  display: flex;
+  justify-content: space-around;
+}
+
+table {
+
+  margin-top: 60px;
+
+
+}
+
+ td {
+  padding: 20px;
+   border: double;
+
+
+}
+
+th {
+  padding: 20px;
+  border: double;
+}
+
+.footer  {
+  margin-top: 60px;
+  padding: 40px;
+  background-color: black;
+  display: flex;
+  text-align: center;
+
+}
+.footer a {
+  text-decoration-color: black;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+footer a:hover {
+  text-decoration-color: white;
+  text-decoration-style: double;
+  color: white;
+}
+.black {
+  font-weight: 800;
+  background-color: black;
+  color: white;
+  font-weight: 100;
+}
+.avatar-medium {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    align-self: center;
+    border: double gray;
+}
+.bg-black {
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: double;
+  padding-bottom: 40px;
+  margin-top: 40px;
+}
+form {
+  font-family: 'Amatic SC', cursive;
+  padding-top: 40px;
+}

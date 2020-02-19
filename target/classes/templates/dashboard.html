@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments:: head" >
+</head>
+
+<body>
+<header th:replace="fragments :: nav" ></header>
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <h3>Administration des spectacles</h3>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nom du spectacle :</th>
+                    <th scope="col">Ville :</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-active" th:each="spectacle : ${spectacles}">
+                    <td th:text="${spectacle.id}">id</td>
+                    <td th:text="${spectacle.name}">name</td>
+                    <td th:text="${spectacle.ville}">ville</td>
+                    <td></td>
+                    <td></td>
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/edit(id=${spectacle.id})}"><i class="fas fa-pen"></i></a></td>
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/delete(id=${spectacle.id})}"><i class="fas fa-trash"></i></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+        </div>
+        <div class="d-flex m-auto">
+            <a class="nav-link btn btn-success m-auto d-table" th:href="@{admin/create/spectacle}">
+                &nbsp; Créer <br> un spectacle</a>
+            <a class="nav-link btn btn-outline-success m-auto d-table" th:href="@{/admin/create/artiste}">
+                &nbsp; Ajouter <br> un artiste</a>
+        </div>
+    </div>
+
+</div>
+<footer th:replace="fragments:: footer" ></footer>
+</body>
+</html>

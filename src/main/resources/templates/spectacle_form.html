@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head th:replace="fragments:: head">
+</head>
+<body>
+<header th:replace="fragments:: nav"></header>
+
+<div class="container">
+
+    <div class="form-group row">
+        <div class="col-6">
+            <h1 class="my-5">Créer un nouveau spectacle </h1>
+
+            <hr>
+            <form  th:action="@{/admin/create/spectacle}" method="post" enctype="multipart/form-data" th:object="${spectacle}">
+                <fieldset>
+                    <legend class="ml-2">Informations de la partie</legend>
+                    <div class="form-group">
+                        <label class="ml-2" for="title">Nom du jeu :</label>
+                        <input type="text" id="title" th:field="*{name}" class="form-control" placeholder="Entrez le nom du spectacle">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1" class="ml-2">Détails de la partie :</label>
+                        <textarea  id="exampleFormControlTextarea1" th:field="*{description}" rows="8" class="form-control ml-2" placeholder="Décrivez les détails du spectacle"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ville" class="ml-2">Ville :</label>
+                        <input type="text" id="ville" th:field="*{ville}" class="form-control" placeholder="Ajouter ici le nom de la ville">
+                    </div>
+
+                    <div class="form-group">
+                        <p th:if="${#fields.hasErrors('all')}" th:errors="*{all}">Cette date n'est pas correct</p>
+                        <label for="date" class="ml-2">Date pour ce spectacle :</label>
+                        <input type="date" id="date" th:field="*{date}" class="form-control" th:value="${#dates.format(standardDate)}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="places" class="ml-2">Nombre de places :</label>
+                        <input type="number" id="places" th:field="*{places}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="artistes" class="ml-2">Artistes :</label>
+                        <input type="text" id="artistes"  class="form-control">
+
+                        <input class="btn btn-secondary ml-2" type="submit" value="Créer" />
+                    </div>
+                    <div class="form-group">
+                        <label for="prix" class="ml-2">Prix :</label>
+                        <input type="number" id="prix" th:field="*{prix}" class="form-control">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <hr>
+        <hr>
+
+    </div>
+</div>
+
+<footer th:replace="fragments:: footer"></footer>
+
+</body>
+</html>
