@@ -3,5 +3,6 @@
 /Users/lydesign/springProjects/wildCircus/src/main/java/com/wild/Wild/Circus/entity/Spectacle.java
 /Users/lydesign/springProjects/wildCircus/src/main/java/com/wild/Wild/Circus/entity/Artiste.java
 /Users/lydesign/springProjects/wildCircus/src/main/java/com/wild/Wild/Circus/repository/SpectacleRepository.java
+/Users/lydesign/springProjects/wildCircus/src/main/java/com/wild/Wild/Circus/controller/AdminController.java
 /Users/lydesign/springProjects/wildCircus/src/main/java/com/wild/Wild/Circus/WildCircusApplication.java
 /Users/lydesign/springProjects/wildCircus/src/main/java/com/wild/Wild/Circus/controller/HomeController.java

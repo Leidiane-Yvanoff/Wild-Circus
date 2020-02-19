@@ -27,9 +27,22 @@ public class HomeController {
 
     @GetMapping("/spectacles")
     public String showSpectacles(Model model) {
-
+        model.addAttribute("spectacles", spectacleRepository.findAll());
         return "show_spectacles";
     }
+
+    /**
+     *
+     * @param model
+     * @param id
+     * @return
+     */
+    @GetMapping("/spectacle")
+    public String showParty(Model model, @RequestParam Long id) {
+        model.addAttribute("spectacle", spectacleRepository.getOne(id));
+        return "spectacle";
+    }
+
 
 
     @GetMapping("/error")
@@ -38,17 +51,11 @@ public class HomeController {
         return "error";
     }
 
-    @RequestMapping("/search-name")
-    public @ResponseBody
-    Spectacle searchSpectacle(@RequestParam String name) {
-        return spectacleRepository.findOneByName(name);
-    }
 
-    @RequestMapping("/search-ville")
-    public @ResponseBody
-    List<Spectacle> getSpectaclesByVille(@RequestParam String ville) {
-        return spectacleRepository.findByVille(ville);
+    @GetMapping("/search/ville")
+    public String getSpectaclesBySearch(Model model, @RequestParam String ville){
+        model.addAttribute("spectacles", spectacleRepository.findByVille(ville));
+        return "search_spectacles";
     }
-
 
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head th:replace="fragments:: head">
+</head>
+<body>
+<header th:replace="fragments:: nav"></header>
+<section class="container my-4">
+
+    <article class="row m-auto">
+        <div class="col">
+
+            <img src="/img/bg-cirque.png" style="width: auto; height: 350px;" alt="logo game party ">
+            <p class="h4 my-4 text-danger" > Oups ! La page qui vous recherchez n'existe pas.
+            </p>
+            <a class="btn btn-outline-dark mx-auto "  th:href="@{/}">Retourner à l'accueil</a>
+        </div>
+
+    </article>
+</section>
+<footer th:replace="fragments:: footer"></footer>
+</body>
+</html>

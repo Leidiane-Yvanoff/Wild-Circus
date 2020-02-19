@@ -16,8 +16,7 @@
                     <th scope="col">id</th>
                     <th scope="col">Nom du spectacle :</th>
                     <th scope="col">Ville :</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -25,19 +24,40 @@
                     <td th:text="${spectacle.id}">id</td>
                     <td th:text="${spectacle.name}">name</td>
                     <td th:text="${spectacle.ville}">ville</td>
-                    <td></td>
-                    <td></td>
+
                     <td><a class="btn btn-outline-dark" th:href="@{/admin/edit(id=${spectacle.id})}"><i class="fas fa-pen"></i></a></td>
                     <td><a class="btn btn-outline-dark" th:href="@{/admin/delete(id=${spectacle.id})}"><i class="fas fa-trash"></i></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <h3>Administration des Artistes</h3>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nom du artiste :</th>
+                    <th scope="col">Role :</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-active" th:each="artiste : ${artistes}">
+                    <td th:text="${artiste.id}">id</td>
+                    <td th:text="${artiste.name}">name</td>
+                    <td th:text="${artiste.presentation}">presentation</td>
+
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/edit(id=${artiste.id})}"><i class="fas fa-pen"></i></a></td>
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/delete(id=${artiste.id})}"><i class="fas fa-trash"></i></a></td>
                 </tr>
                 </tbody>
             </table>
             <br>
         </div>
         <div class="d-flex m-auto">
-            <a class="nav-link btn btn-success m-auto d-table" th:href="@{admin/create/spectacle}">
+            <a class="btn btn-outline-dark m-auto d-table" th:href="@{admin/create/spectacle}">
                 &nbsp; Créer <br> un spectacle</a>
-            <a class="nav-link btn btn-outline-success m-auto d-table" th:href="@{/admin/create/artiste}">
+            <a class="btn btn-outline-danger m-auto d-table" th:href="@{/admin/create/artiste}">
                 &nbsp; Ajouter <br> un artiste</a>
         </div>
     </div>

@@ -12,18 +12,18 @@
 <section class="container">
 
                 <h2 id="performances">Performances</h2>
-                <ul class="performances row">
-                    <!-- performance 1 -->
+                <ul class=" performances row">
+
                     <li class="col">
                         <h3><i class="fas fa-laugh-wink"></i>&nbsp;Laugh</h3>
                         <p>As an adult, come and discover our irresistible clowns, between practical jokes and pranks let yourself be carried away by their joy and fall back into childhood.</p>
                     </li>
-                    <!-- performance 2 -->
+
                     <li class="col">
                         <h3><i class="fas fa-cloud-moon"></i>&nbsp;Dream</h3>
                         <p>Let yourself be carried away in a world where the real and the imaginary are one, in the company of our talented magicians, discover a wonderful world limited only by your imagination.</p>
                     </li>
-                    <!-- performance 3 -->
+
                     <li class="col">
                         <h3><i class="fas fa-heart"></i>&nbsp;Marvel at</h3>
                         <p>Tame the untameable in the company of our tamers, between roar and razor-sharp claws, watch these fierce felines turn into sweet kittens.</p>
@@ -36,21 +36,22 @@
 
 <section class="container">
 
-        <div class="row">
+        <article class="row">
+            <h2 class="text-center col" id="about">About Us</h2>
+                <div class="card-body image-text col">
 
-                <h2 id="about">About Us</h2>
-                <article class="card-body image-text col-12">
                     <img class="image" src="http://claudinedu11200.c.l.pic.centerblog.net/b68b0d61.jpg" alt="image cirque">
-                    <div class="col-lg-6 ">
+                </div>
+                    <div class="col">
                         <h4>&nbsp; &nbsp; Team Wild Circus </h4>
-                        <p class="text">&nbsp;&nbsp; At Wild Circus, we strive to provide exactly what our customers are looking for. A huge part of our brainstorming process is looking at our client feedback to make sure you're well taken care of. <br>
+                        <p class="text-center m-auto" style="width:500px;" >&nbsp;&nbsp; At Wild Circus, we strive to provide exactly what our customers are looking for. A huge part of our brainstorming process is looking at our client feedback to make sure you're well taken care of. <br>
                             &nbsp;&nbsp; We are personally committed to delivering the very best. Everything, from customer support to product design and development, is provided by our dedicated (and adorable) team in beautiful Tours, France.
 
                             <br>
                         </p>
                     </div>
-                </article>
-        </div>
+
+        </article>
 </section>
                 <section>
                 <div class="row bg-black">
@@ -66,7 +67,7 @@
                             <hr>
                             <p>FOUNDER &amp; CHIEF EXECUTIVE OFFICER
                             </p>
-                            <a href="" class="btn btn-danger float-right">En savoir <i class="fas fa-plus"></i></a>
+                            <a href="" class="btn btn-danger float-right">En savoir +</a>
                         </div>
                     </div>
 
@@ -83,7 +84,7 @@
                             <p>CHIEF FINANCIAL OFFICER &amp; CHIEF OPERATING OFFICER
                             </p>
 
-                            <a href="" class="btn btn-danger float-right">En savoir <i class="fas fa-plus"></i></a>
+                            <a href="" class="btn btn-danger float-right">En savoir +</a>
                         </div>
                     </div>
                     <div class="col-4">
@@ -99,7 +100,7 @@
                             <p>VICE PRESIDENT OF PRODUCT, CONSUMER PRODUCTS
                             </p>
 
-                            <a href="" class="btn btn-danger float-right">En savoir <i class="fas fa-plus"></i></a>
+                            <a href="" class="btn btn-danger float-right">En savoir +</a>
                         </div>
                     </div>
                 </div>
@@ -110,74 +111,12 @@
 
 <hr />
 
-<section class="prices">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 id="price">Prices</h2>
-                <table class="table">
-                    <thead class="black">
-
-                    <tr>
-
-                        <th> Public :</th>
-                        <th>Week ( off Wednesday )</th>
-                        <th>Week-end &amp; Wednesday </th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-
-                    <tr>
-
-                        <th>Adult</th>
-
-                        <td>18 € 50</td>
-                        <td>20 € 50</td>
-                    </tr>
-                    <tr>
-                        <th>Kids  - 12 years </th>
-                        <td> 8 € 50</td>
-                        <td> 9 € 50</td>
-                    </tr>
-                    <tr>
-                        <th>Group ( + 10 people )</th>
-                        <td>7 € 50</td>
-                        <td>6 € 50</td>
-                    </tr>
-                    <tr>
-                        <th>School</th>
-                        <td>5 € 50</td>
-                        <td>4 € 50</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<section class="artistes">
 
 </section>
 
 <hr />
 
-<section>
-    <h2 id="contact">Contact Us</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <form method="post" action="traitement.php" class="form-group">
-                    <label for="pseudo">Your name :</label>
-                    <input type="text" name="pseudo" id="pseudo"><br><br>
-
-                    <label for="presentation"> Your message :</label><br>
-                    <textarea name="prez" id="presentation" cols="30" rows="4"></textarea> <br> <br>
-                    <input type="submit" value="Send" class="btn-primary">
-                </form>
-            </div>
-        </div>
-    </div>
-
-</section>
 
 <footer th:replace="fragments:: footer"></footer>
 </body>

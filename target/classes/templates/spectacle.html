@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head th:replace="fragments:: head">
+</head>
+<body>
+<header th:replace="fragments:: nav"></header>
+
+<section class="container ">
+    <div class="row">
+        <article class="col card m-auto text-left" style="max-width: 80%;" >
+            <h2 class="text-center my-3 text-danger"  th:text="${spectacle.name}">name</h2>
+            <img class="img-responsive"  style="width:auto;  height:400px; display: block; margin: 2rem auto" th:src="${spectacle.photoUrl}" alt="Card image">
+            <p class="card-subtitle text-muted mt-3 h5" th:text="| Localisation :  ${spectacle.ville}|">ville</p>
+            <p class="card-text montserrat" th:text="| Le : ${#dates.format(spectacle.date, 'dd MMMM yyyy')}|"></p>
+            <p class="card-text montserrat" th:text="${spectacle.description}">description</p>
+            <p class="card-text " th:text="| Nombres de places disponibles : ${spectacle.places}|">places</p>
+            <p class="card-text " th:text="| Prix : ${spectacle.prix} €|">prix</p>
+
+            <hr>
+        </article>
+    </div>
+</section>
+<footer th:replace="fragments:: footer"></footer>
+</body>
+</html>

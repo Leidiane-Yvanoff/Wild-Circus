@@ -16,6 +16,7 @@ public class Artiste {
     @Size(min=2,max=255)
     private String name;
     private String presentation;
+    private String photoUrl;
 
     @ManyToMany(mappedBy="artistes")
     private Set<Spectacle> spectacles;
@@ -50,6 +51,14 @@ public class Artiste {
 
     public void setPresentation(String presentation) {
         this.presentation = presentation;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 
     public Set<Spectacle> getSpectacles() {

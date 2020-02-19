@@ -32,7 +32,7 @@ h2 {
   color: red;
   padding-top: 80px;
   text-align:center;
-  border-bottom-style:  double ;
+  border-bottom-style: double ;
   padding-bottom: 10px;
 }
 h3 {
@@ -70,8 +70,10 @@ h2.slogan {
   color: red;
   text-align: center;
 
-
-
+}
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
 }
 .navbar-nav li {
   padding-top: 5px;
@@ -135,13 +137,13 @@ table {
  td {
   padding: 20px;
    border: double;
-
+    color: black;
 
 }
 
 th {
   padding: 20px;
-  border: double;
+
 }
 
 .footer  {
@@ -184,8 +186,7 @@ footer a:hover {
   border: double;
   padding-bottom: 40px;
   margin-top: 40px;
+  color: red;
 }
-form {
-  font-family: 'Amatic SC', cursive;
-  padding-top: 40px;
-}
+
+

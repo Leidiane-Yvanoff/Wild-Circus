@@ -3,8 +3,6 @@ package com.wild.Wild.Circus.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +20,8 @@ public class Spectacle {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
     private int places;
+    @Column(columnDefinition = "String default 'https://cdn.pixabay.com/photo/2015/10/17/23/06/circus-993622_1280.jpg'" )
+    private String photoUrl;
 
     @ManyToMany
     private Set<Artiste> artistes;
@@ -88,6 +88,14 @@ public class Spectacle {
         this.places = places;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
     public Set<Artiste> getArtistes() {
         return artistes;
     }
@@ -95,4 +103,5 @@ public class Spectacle {
     public void setArtistes(Set<Artiste> artistes) {
         this.artistes = artistes;
     }
+
 }

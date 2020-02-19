@@ -15,6 +15,7 @@
             <form  th:action="@{/admin/create/spectacle}" method="post" enctype="multipart/form-data" th:object="${spectacle}">
                 <fieldset>
                     <legend class="ml-2">Informations de la partie</legend>
+                    <input name="id" th:field="*{id}" type="hidden">
                     <div class="form-group">
                         <label class="ml-2" for="title">Nom du jeu :</label>
                         <input type="text" id="title" th:field="*{name}" class="form-control" placeholder="Entrez le nom du spectacle">
@@ -51,7 +52,6 @@
                         <input type="number" id="prix" th:field="*{prix}" class="form-control">
                         <input class="btn btn-secondary ml-2" type="submit" value="Créer" />
                     </div>
-
 
                 </fieldset>
             </form>
