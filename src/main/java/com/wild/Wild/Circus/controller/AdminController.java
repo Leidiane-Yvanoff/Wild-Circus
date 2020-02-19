@@ -39,7 +39,7 @@ public class AdminController {
      */
     @GetMapping("admin/create/spectacle")
     public String getSpectacleForm(Model model) {
-
+        model.addAttribute("artistes", artisteRepository.findAll());
         model.addAttribute("spectacle", new Spectacle());
         return "spectacle_form";
     }
@@ -64,7 +64,7 @@ public class AdminController {
 
     /**
      * Méthode que affiche le formulaire ainsi que les informations pour la modification
-     * d'un partie
+     * d'un show
      * @param model
      * @param id
      * @return
@@ -73,7 +73,7 @@ public class AdminController {
     public String adminEdit(Model model, @RequestParam Long id) {
         Optional<Spectacle> spectacle = spectacleRepository.findById(id);
         if(spectacle.isPresent()) {
-
+            model.addAttribute("artistes", artisteRepository.findAll());
             model.addAttribute("spectacle", spectacle.get());
         }
         return "spectacle_edit";
@@ -89,15 +89,55 @@ public class AdminController {
         spectacleRepository.save(spectacle);
         return "redirect:/admin";
     }
+    /**
+     * Méthode que affiche le formulaire ainsi que les informations pour la modification
+     * d'un artiste
+     * @param model
+     * @param id
+     * @return
+     */
+    @GetMapping("/admin/edit/artiste")
+    public String adminEditArtiste(Model model, @RequestParam Long id) {
+        Optional<Artiste> artiste = artisteRepository.findById(id);
+        if(artiste.isPresent()) {
+
+            model.addAttribute("spectacles", spectacleRepository.findAll());
+            model.addAttribute("artiste", artiste.get());
+        }
+        return "artiste_edit";
+    }
+
+    /**
+     * Méthode qui renvoie les informations du formulaire pour modifier un artiste
+     * @param artiste
+     * @return
+     */
+    @PostMapping("/admin/edit/artiste")
+    public String postEditArtiste(@ModelAttribute Artiste artiste){
+        artisteRepository.save(artiste);
+        return "redirect:/admin";
+    }
+
 
     /**
      * Méthode qui permet de supprimer un spectacle dans le espace admin
      * @param id
      * @return
      */
-    @GetMapping("/admin/delete")
+    @GetMapping("/admin/delete/spectacle")
     public String deleteSpectacle(@RequestParam Long id) {
         spectacleRepository.deleteById(id);
+        return "redirect:/admin";
+    }
+
+    /**
+     * Méthode qui permet de supprimer un artiste dans le espace admin
+     * @param id
+     * @return
+     */
+    @GetMapping("/admin/delete/artiste")
+    public String deleteArtiste(@RequestParam Long id) {
+        artisteRepository.deleteById(id);
         return "redirect:/admin";
     }
 

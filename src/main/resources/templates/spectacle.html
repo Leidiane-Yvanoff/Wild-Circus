@@ -13,6 +13,12 @@
             <p class="card-subtitle text-muted mt-3 h5" th:text="| Localisation :  ${spectacle.ville}|">ville</p>
             <p class="card-text montserrat" th:text="| Le : ${#dates.format(spectacle.date, 'dd MMMM yyyy')}|"></p>
             <p class="card-text montserrat" th:text="${spectacle.description}">description</p>
+            <p class="card-text h5 text-danger" >Artiste(s) : </p>
+            <ul class="artistes list-group text-dark">
+                <li th:each="artiste : ${spectacle.artistes}" class="artistes list-group-item text-dark">
+                    <a th:text="${artiste.name}" th:href="@{/spectacle/{id}(id=${artiste.id})}" class="list-group-item text-dark" ></a>
+                </li>
+            </ul>
             <p class="card-text " th:text="| Nombres de places disponibles : ${spectacle.places}|">places</p>
             <p class="card-text " th:text="| Prix : ${spectacle.prix} €|">prix</p>
 

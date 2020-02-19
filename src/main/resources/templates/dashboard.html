@@ -25,8 +25,8 @@
                     <td th:text="${spectacle.name}">name</td>
                     <td th:text="${spectacle.ville}">ville</td>
 
-                    <td><a class="btn btn-outline-dark" th:href="@{/admin/edit(id=${spectacle.id})}"><i class="fas fa-pen"></i></a></td>
-                    <td><a class="btn btn-outline-dark" th:href="@{/admin/delete(id=${spectacle.id})}"><i class="fas fa-trash"></i></a></td>
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/edit/spectacle(id=${spectacle.id})}"><i class="fas fa-pen"></i></a></td>
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/delete/spectacle(id=${spectacle.id})}"><i class="fas fa-trash"></i></a></td>
                 </tr>
                 </tbody>
             </table>
@@ -47,8 +47,8 @@
                     <td th:text="${artiste.name}">name</td>
                     <td th:text="${artiste.presentation}">presentation</td>
 
-                    <td><a class="btn btn-outline-dark" th:href="@{/admin/edit(id=${artiste.id})}"><i class="fas fa-pen"></i></a></td>
-                    <td><a class="btn btn-outline-dark" th:href="@{/admin/delete(id=${artiste.id})}"><i class="fas fa-trash"></i></a></td>
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/edit/artiste(id=${artiste.id})}"><i class="fas fa-pen"></i></a></td>
+                    <td><a class="btn btn-outline-dark" th:href="@{/admin/delete/artiste(id=${artiste.id})}"><i class="fas fa-trash"></i></a></td>
                 </tr>
                 </tbody>
             </table>

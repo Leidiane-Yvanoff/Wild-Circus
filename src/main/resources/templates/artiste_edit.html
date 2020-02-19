@@ -9,12 +9,13 @@
 
     <div class="form-group row">
         <div class="col-6">
-            <h1 class="my-5">Ajouter un nouveau artiste </h1>
+            <h1 class="my-5">Modifier le profil d'un artiste </h1>
 
             <hr>
             <form  th:action="@{/admin/create/artiste}" method="post" enctype="multipart/form-data" th:object="${artiste}">
                 <fieldset>
                     <legend class="ml-2">Informations sur l'artiste</legend>
+                    <input name="id" th:field="*{id}" type="hidden">
                     <div class="form-group">
                         <label class="ml-2" for="name">Nom de l'artiste :</label>
                         <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Entrez le nom de l'artiste">
@@ -27,12 +28,13 @@
 
                     </div>
                     <div class="form-group">
-                    <label for="spectacle" class="col col-form-label ">participation aux spectacles :</label>
-                    <ul class="d-lg-flex justify-content-around flex-row" name="spectacle" id="spectacle">
-                        <li  th:each="spectacle : ${spectacles}" style="margin-right: 2rem;">
-                            <input class="form-check-input" type="checkbox" th:text="${spectacle.name}" th:value="${spectacle.id}" th:field="*{spectacles}"></li>
-                    </ul>
-                    <input class="btn btn-secondary ml-2 mt-3" type="submit" value="Créer" />
+                        <label for="spectacle" class="col col-form-label ">Participations aux spectacles :</label>
+                        <ul class="d-lg-flex justify-content-around flex-row" name="spectacle" id="spectacle">
+                            <li  th:each="spectacle : ${spectacles}" class="m-auto">
+                                <input class="form-check-input" type="checkbox" th:text="${spectacle.name}" th:value="${spectacle.id}" th:field="*{spectacles}"></li>
+                        </ul>
+
+                        <input class="btn btn-secondary ml-2 mt-3" type="submit" value="Modifier" />
                     </div>
                 </fieldset>
             </form>

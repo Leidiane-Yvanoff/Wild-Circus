@@ -1,6 +1,7 @@
 package com.wild.Wild.Circus.controller;
 
 import com.wild.Wild.Circus.entity.Spectacle;
+import com.wild.Wild.Circus.repository.ArtisteRepository;
 import com.wild.Wild.Circus.repository.SpectacleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,8 @@ public class HomeController {
 
     @Autowired
     private SpectacleRepository spectacleRepository;
+    @Autowired
+    private ArtisteRepository artisteRepository;
 
     //Méthode qui controle la vue pour la page d'accueil
     @GetMapping("/")
@@ -27,6 +30,7 @@ public class HomeController {
 
     @GetMapping("/spectacles")
     public String showSpectacles(Model model) {
+        model.addAttribute("artistes", artisteRepository.findAll());
         model.addAttribute("spectacles", spectacleRepository.findAll());
         return "show_spectacles";
     }
@@ -39,6 +43,7 @@ public class HomeController {
      */
     @GetMapping("/spectacle")
     public String showParty(Model model, @RequestParam Long id) {
+        model.addAttribute("artistes", artisteRepository.findAll());
         model.addAttribute("spectacle", spectacleRepository.getOne(id));
         return "spectacle";
     }
