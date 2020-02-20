@@ -1,0 +1,10 @@
+.classe
+.idea /
+.réglages
+.projet
+cible /
+.classpath
+.DS_Store
+* ~
+### Sensitive Data ###
+src/main/resources/application.properties
