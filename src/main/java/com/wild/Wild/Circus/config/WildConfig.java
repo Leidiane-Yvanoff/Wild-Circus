@@ -46,8 +46,8 @@ public class WildConfig extends WebSecurityConfigurerAdapter{
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         auth
                 .inMemoryAuthentication()
-                .withUser("wilder")
-                .password(encoder.encode("wildcircus"))
+                .withUser("admin")
+                .password(encoder.encode("admin"))
                 .roles("admin");
 
     }
