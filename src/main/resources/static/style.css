@@ -178,6 +178,13 @@ footer a:hover {
     align-self: center;
     border: double gray;
 }
+.avatar {
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 5%;
+    align-self: center;
+    border: double gray;
+}
 .bg-black {
 
   display: flex;

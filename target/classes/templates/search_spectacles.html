@@ -4,13 +4,13 @@
 </head>
 <body>
 <header th:replace="fragments:: nav"></header>
-<div class="container my-4">
-    <h1>Résultat de votre recherche :</h1>
-    <div class="row m-auto">
+<section class="container my-4">
+    <h1 class="mt-4">Résultat de votre recherche :</h1>
+    <article class="row m-auto">
 
-        <div th:if="${spectacles.isEmpty()}">
+        <div class="my-4 col" th:if="${spectacles.isEmpty()}">
             <img src="img/circus.jpg" style="max-width: 20rem; height: 250px;" alt="image cirque">
-            <p class="h4 my-4 text-success" >Vous informe que il n'y a pas encore de spectacle associé à cette recherche.
+            <p class="h2 my-4 text-danger" >Oups ! il n'y a pas encore de spectacle associé à cette recherche.
             </p>
             <a class="btn btn-dark text-white mx-auto "  th:href="@{/}">Retourner à l'accueil</a>
         </div>
@@ -19,15 +19,14 @@
             <p class="h2 my-3 h5 text-success"  th:text="${show.name}">name</p>
             <img  th:src="${show.photoUrl}" style="max-width: 100%; height: 250px;"  alt="Card image"> <br> <br>
             <p class="card-text" th:text="${show.ville}">ville</p>
-
-
-
             <a class="btn btn-dark text-white mx-auto "  th:href="@{/spectacle(id=${show.id})}">En savoir +</a>
             <hr>
 
         </div>
-    </div>
-</div>
+    </article>
+</section>
+
+
 <footer th:replace="fragments:: footer"></footer>
 </body>
 </html>

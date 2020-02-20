@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head th:replace="fragments:: head">
+</head>
+<body>
+<header th:replace="fragments:: nav"></header>
+<div class="container my-4">
+    <h1 class="mt-4">Résultat de votre recherche :</h1>
+    <div class="row m-auto">
+
+        <div class="my-4 col" th:if="${artistes.isEmpty()}">
+            <img src="img/circus.jpg" style="max-width: 20rem; height: 250px;" alt="image cirque">
+            <p class="h2 my-4 text-danger" >Oups ! il n'y a pas encore de artiste associé à cette recherche.
+            </p>
+            <a class="btn btn-dark text-white mx-auto "  th:href="@{/}">Retourner à l'accueil</a>
+        </div>
+
+        <div class="col-lg-4 card border-dark mx-auto my-3" style="max-width: 20rem; height: 450px;" th:each="artiste : ${artistes}">
+            <p class="h2 my-3 h5 text-success"  th:text="${artiste.name}">name</p>
+            <img  th:src="${artiste.photoUrl}" style="max-width: 100%; height: 250px;"  alt="Card image"> <br> <br>
+            <p class="card-text" th:text="${artiste.presentation}">ville</p>
+            <a class="btn btn-dark text-white mx-auto "  th:href="@{/artiste(id=${artiste.id})}">En savoir +</a>
+            <hr>
+
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments:: footer"></footer>
+</body>
+</html>

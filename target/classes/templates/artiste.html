@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head th:replace="fragments:: head">
+</head>
+<body>
+<header th:replace="fragments:: nav"></header>
+
+<section class="container ">
+    <div class="row">
+        <article class="col card m-auto text-left" style="max-width: 80%;" >
+            <h2 class="text-center my-3 text-danger"  th:text="${artiste.name}">name</h2>
+            <img class="img-responsive"  style="width:auto;  height:400px; display: block; margin: 2rem auto" th:src="${artiste.photoUrl}" alt="Card image">
+            <p class="card-text montserrat" th:text="${artiste.presentation}">description</p>
+            <p class="card-text h5 text-danger" >Participation aux spectacle(s) : </p>
+            <ul class="artistes list-group text-dark flex-row">
+                <li th:each="spectacle : ${artiste.spectacles}" class="artistes list-group-item text-dark ">
+                    <a th:text="${spectacle.name}" th:href="@{/spectacle(id=${spectacle.id})}" class="list-group-item text-dark" ></a>
+                </li>
+            </ul>
+
+            <hr>
+        </article>
+    </div>
+</section>
+<footer th:replace="fragments:: footer"></footer>
+</body>
+</html>

@@ -30,11 +30,11 @@
                     <div class="form-group">
                         <label for="spectacle" class="col col-form-label ">Participations aux spectacles :</label>
                         <ul class="d-lg-flex justify-content-around flex-row" name="spectacle" id="spectacle">
-                            <li  th:each="spectacle : ${spectacles}" style="margin-right: 2rem;">
+                            <li  th:each="spectacle : ${spectacles}" class="m-auto">
                                 <input class="form-check-input" type="checkbox" th:text="${spectacle.name}" th:value="${spectacle.id}" th:field="*{spectacles}"></li>
                         </ul>
 
-                        <input class="btn btn-secondary ml-2 mt-3" type="submit" value="Créer" />
+                        <input class="btn btn-secondary ml-2 mt-3" type="submit" value="Modifier" />
                     </div>
                 </fieldset>
             </form>

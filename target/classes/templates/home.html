@@ -53,69 +53,33 @@
 
         </article>
 </section>
-                <section>
-                <div class="row bg-black">
-                    <div class="col-4">
-
-                        <h4 class="card-title">
-                            Arnaud Petit
-                        </h4>
-                        <hr>
-
-                        <img src="https://randomuser.me/api/portraits/men/43.jpg" class="avatar-medium" alt="avatar de ">
-                        <div class="card-text">
-                            <hr>
-                            <p>FOUNDER &amp; CHIEF EXECUTIVE OFFICER
-                            </p>
-                            <a href="" class="btn btn-danger float-right">En savoir +</a>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-
-                        <h4 class="card-title">
-                            Céline Guinot
-                        </h4>
-                        <hr>
-
-                        <img src="https://randomuser.me/api/portraits/women/49.jpg" class="avatar-medium" alt="avatar de ">
-                        <hr>
-                        <div class="card-text">
-                            <p>CHIEF FINANCIAL OFFICER &amp; CHIEF OPERATING OFFICER
-                            </p>
-
-                            <a href="" class="btn btn-danger float-right">En savoir +</a>
-                        </div>
-                    </div>
-                    <div class="col-4">
-
-                        <h4 class="card-title">
-                            Ly Tang
-                        </h4>
-                        <hr>
-
-                        <img src="https://randomuser.me/api/portraits/women/90.jpg" class="avatar-medium" alt="avatar de ">
-                        <hr>
-                        <div class="card-text">
-                            <p>VICE PRESIDENT OF PRODUCT, CONSUMER PRODUCTS
-                            </p>
-
-                            <a href="" class="btn btn-danger float-right">En savoir +</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<h2 class="text-center col" >Notre troupe d'artistes :</h2>
+<section class="row ">
+<article class="col-4" th:each="artiste : ${artistes}">
+    <h4 class="card-title" th:text="${artiste.name}" ><a th:href="@{/artiste(id=${artiste.id})}" ></a></h4>
+    <img class="avatar-medium mb-4" th:src="@{${artiste.photoUrl}}"
+          alt="image">
+    <div class="card-text">
+        <p class="card-text" th:text="${artiste.presentation}">ville</p>
+        <a class="btn btn-danger " th:href="@{/artiste(id=${artiste.id})}">En savoir +</a>
     </div>
+</article>
 </section>
 
-<hr />
+<h2 class="text-center col" >Spectacles à l'affiche :</h2>
 
-<section class="artistes">
+<section class="row ">
 
+    <article class="col-4 " th:each="spectacle : ${spectacles}">
+        <h4 class="card-title" th:text="${spectacle.name}" ><a th:href="@{/spectacle (id=${spectacle .id})}" ></a></h4>
+        <img class="avatar around mb-4" th:src="@{${spectacle .photoUrl}}"
+             alt="image">
+        <div class="card-text">
+            <p class="card-text" th:text="${spectacle.ville}">ville</p>
+            <a class="btn btn-danger " th:href="@{/spectacle (id=${spectacle .id})}">En savoir +</a>
+        </div>
+    </article>
 </section>
-
-<hr />
 
 
 <footer th:replace="fragments:: footer"></footer>

@@ -23,8 +23,9 @@ public class HomeController {
 
     //Méthode qui controle la vue pour la page d'accueil
     @GetMapping("/")
-    public String home() {
-
+    public String home(Model model) {
+        model.addAttribute("artistes", artisteRepository.findTop3ByOrderByName());
+        model.addAttribute("spectacles", spectacleRepository.findTop3ByOrderByName());
         return "home";
     }
 
@@ -48,6 +49,25 @@ public class HomeController {
         return "spectacle";
     }
 
+    @GetMapping("/artistes")
+    public String showArtistes(Model model) {
+        model.addAttribute("artistes", artisteRepository.findAll());
+        model.addAttribute("spectacles", spectacleRepository.findAll());
+        return "show_artistes";
+    }
+
+    /**
+     *
+     * @param model
+     * @param id
+     * @return
+     */
+    @GetMapping("/artiste")
+    public String showArtiste(Model model, @RequestParam Long id) {
+        model.addAttribute("artiste", artisteRepository.getOne(id));
+        model.addAttribute("spectacles", spectacleRepository.findAll());
+        return "artiste";
+    }
 
 
     @GetMapping("/error")
@@ -57,10 +77,13 @@ public class HomeController {
     }
 
 
-    @GetMapping("/search/ville")
-    public String getSpectaclesBySearch(Model model, @RequestParam String ville){
+    @GetMapping("/search")
+    public String getBySearch(Model model, @RequestParam  String ville){
+
         model.addAttribute("spectacles", spectacleRepository.findByVille(ville));
         return "search_spectacles";
     }
+
+
 
 }

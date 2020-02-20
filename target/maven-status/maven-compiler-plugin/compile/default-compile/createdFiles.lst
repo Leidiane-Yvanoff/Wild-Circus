@@ -1,8 +1,8 @@
 com/wild/Wild/Circus/repository/SpectacleRepository.class
-com/wild/Wild/Circus/controller/HomeController.class
 com/wild/Wild/Circus/entity/Artiste.class
 com/wild/Wild/Circus/WildCircusApplication.class
-com/wild/Wild/Circus/controller/AdminController.class
 com/wild/Wild/Circus/entity/Spectacle.class
-com/wild/Wild/Circus/config/WildConfig.class
 com/wild/Wild/Circus/repository/ArtisteRepository.class
+com/wild/Wild/Circus/controller/HomeController.class
+com/wild/Wild/Circus/controller/AdminController.class
+com/wild/Wild/Circus/config/WildConfig.class
